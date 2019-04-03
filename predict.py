@@ -1,6 +1,6 @@
 from torch import nn
 from data_util import voc
-from seq2seq import EncoderRNN, LuongAttnDecoderRNN, GreedySearchDecoder, evaluateInput
+from seq2seq import EncoderRNN, LuongAttnDecoderRNN, evaluateInput
 from config import *
 
 ######################################################################
@@ -10,7 +10,7 @@ from config import *
 
 # 因为这里是预测，所以直接加载训练好的模型。
 # 如果训练和加载是一条机器，那么直接加载
-checkpoint = torch.load(directory)
+checkpoint = torch.load(model_checkpoint)
 # 否则比如checkpoint是在GPU上得到的，但是我们现在又用CPU来训练或者测试，那么注释掉下面的代码
 #checkpoint = torch.load(loadFilename, map_location=torch.device('cpu'))
 encoder_sd = checkpoint['en']

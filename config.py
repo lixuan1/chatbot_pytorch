@@ -38,5 +38,8 @@ decoder_learning_ratio = 5.0
 n_iteration = 4000
 print_every = 1
 save_every = 500
+
 # 保存checkpoint目录
 directory = os.path.join(model_name, '{}-{}_{}'.format(encoder_n_layers, decoder_n_layers, hidden_size))
+# 定义预测时使用的模型路径
+model_checkpoint = os.path.join(directory, '{}_{}.tar'.format(n_iteration, 'checkpoint'))
