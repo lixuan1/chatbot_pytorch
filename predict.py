@@ -24,12 +24,12 @@ voc.__dict__ = checkpoint['voc_dict']
 print('Building encoder and decoder ...')
 # 初始化word embedding
 embedding = nn.Embedding(voc.num_words, hidden_size)
-if loadFilename:
+if model_checkpoint:
     embedding.load_state_dict(embedding_sd)
 # 初始化encoder和decoder模型
 encoder = EncoderRNN(hidden_size, embedding, encoder_n_layers, dropout)
 decoder = LuongAttnDecoderRNN(attn_model, embedding, hidden_size, voc.num_words, decoder_n_layers, dropout)
-if loadFilename:
+if model_checkpoint:
     encoder.load_state_dict(encoder_sd)
     decoder.load_state_dict(decoder_sd)
 # 使用合适的设备
