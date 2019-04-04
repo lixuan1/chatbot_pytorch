@@ -9,7 +9,7 @@
 #
 效果截图：
 #
-/home/cuhksz/Pictures/Screenshot from 2019-04-04 09-53-23.png
+![image](https://github.com/lixuan1/chatbot_pytorch/raw/master/image/Screenshot from 2019-04-04 09-53-23.png)
 #
-通过修改config.py中的模型参数，更换数据集等，以训练一个更好的chatbot
+通过修改config.py中的模型参数，或更换数据集，修改data_util.py，以训练一个更好的chatbot
 
